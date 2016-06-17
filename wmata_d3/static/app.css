@@ -1,0 +1,65 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+h2, h3 {
+    color: #444;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+ul > li {
+    list-style: none;
+    display: table;
+}
+
+ul > li > svg {
+    vertical-align: middle;
+}
+
+ul > li > span {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+circle {
+    stroke-width: 2;
+    stroke: black;
+    cursor: pointer;
+}
+
+g.line-code {
+    cursor: pointer;
+}
+
+path {
+    stroke-width: 12;
+    stroke-opacity: .85;
+    fill: none;
+}
+
+.light-stroke {
+    stroke-opacity: .1;
+}
+
+#map {
+    display: inline-block;
+}
+
+#map-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 12px;
+    margin-left: 10px;
+}

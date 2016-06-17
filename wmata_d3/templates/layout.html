@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WMATA D3 Visualization</title>
+    <link rel="stylesheet" type="text/css" href="/static/app.css">
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/static/app.js"></script>
+</head>
+<body>
+<h1>WMATA D3 Metro Map</h1>
+<div id="map"></div>
+<div id="map-text" style="display: none;">
+    <div>
+        <h2>Description</h2>
+        <p>
+            D3.js visualization of the WMATA metro rail system using real-time train predictions from the WMATA API.
+            Earliest train arrival time per station determines grayscale colors. Hovering over a station displays the
+            station name and train arrival times per station platform (polled in 5 second intervals).
+        </p>
+    </div>
+    <div>
+        <h2>Key</h2>
+        <ul>
+            <li>BRD = Boarding</li>
+            <li>ARR = Arriving</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Legend (grayscale)</h2>
+        <ul>
+            <li>
+                <svg width="24" height="24">
+                    <circle cx="10" cy="10" r="6" fill="#000"></circle>
+                </svg>
+                <span>Train boarding or arriving</span>
+            </li>
+            <li>
+                <svg width="24" height="24">
+                    <circle cx="10" cy="10" r="6" fill="#444"></circle>
+                </svg>
+                <span>&lt; 5 min. away</span>
+            </li>
+            <li>
+                <svg width="24" height="24">
+                    <circle cx="10" cy="10" r="6" fill="#888"></circle>
+                </svg>
+                <span>&lt; 10 min. away</span>
+            </li>
+            <li>
+                <svg width="24" height="24">
+                    <circle cx="10" cy="10" r="6" fill="#ccc"></circle>
+                </svg>
+                <span>&lt; 15 min. away</span>
+            </li>
+            <li>
+                <svg width="24" height="24">
+                    <circle cx="10" cy="10" r="6" fill="#fff"></circle>
+                </svg>
+                <span>&gt;= 15 min. away</span>
+            </li>
+            <li>
+                <svg width="24" height="24"></svg>
+                <span>(or no prediction available)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    d3.json('/stations', function (error, data) {
+        if (error) console.log(error);
+        wmata.init(data);
+    });
+</script>
+</body>
+</html>
