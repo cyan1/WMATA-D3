@@ -3,6 +3,8 @@ WMATA D3 Visualization
 
 D3.js visualization of the WMATA metro map using real-time predictions from the WMATA API.
 
+![alt tag](https://raw.githubusercontent.com/cyan1/WMATA-D3/544198f6941d997ff721fcb45058b7f9012362bf/WMATA_D3.png)
+
 Environment
 ===========
 
